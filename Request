@@ -1,0 +1,23 @@
+Request
+Path Parameters
+ticker
+string
+required
+Ticker for any given stock
+
+Query Parameters
+page
+integer
+Page number
+
+page_size
+integer
+Items / page
+
+query
+string
+Query to match specific issue or summary
+
+queryTicker
+string
+Ticker for searchall view
