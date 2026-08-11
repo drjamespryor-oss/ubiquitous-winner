@@ -1,0 +1,69 @@
+Body
+
+application/json
+
+application/json
+JSON Response structure for historical lobbying endpoint.
+
+array of:
+Date
+string<date-time>
+required
+Date that the lobbying spend was reported
+
+Amount
+string
+Size of spending instance (USD)
+
+Client
+string
+Full name of the lobbying client
+
+Issue
+string
+Category of legislation that is being lobbied for
+
+Specific_Issue
+string
+Specific piece of legislation being lobbied for
+
+Registrant
+string
+required
+Full name of the disclosure registrant
+
+Ticker
+string
+required
+Company ticker
+
+Token
+:
+ticker*
+:
+page
+:
+page_size
+:
+query
+:
+queryTicker
+:
+Send API Request
+library(httr)
+
+url <- "https://api.quiverquant.com/beta/historical/lobbying/{ticker}"
+
+response <- VERB("GET", url, add_headers('Authorization' = 'Bearer 123'), content_type("application/octet-stream"), accept("application/json"))
+
+content(response, "text")
+[
+  {
+    "Date": "2019-08-24T14:15:22Z",
+    "Amount": "string",
+    "Client": "string",
+    "Issue": "string",
+    "Specific_Issue": "string",
+    "Registrant": "string",
+    "Ticker": "string"
+  }
